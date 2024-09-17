@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-    root: {
-        bundleName: "Hello World",
-        bundleDescription: "This bundle prints Hello.",
-        hello: "Hello World"
+module.exports = {
+    bundleName: "Tageslicht",
+    bundleDescription: "Das Tageslicht-Widget kann verwendet werden, um die Uhrzeit und das Datum zu manipulieren und den Schatten in einer SceneView umzuschalten.",
+    ui: {
+        windowTitle: "Tageslicht-Simulation"
     },
-    de: true
+    tool: {
+        title: "Tageslicht",
+        tooltip: "Tageslicht"
+    }
 };

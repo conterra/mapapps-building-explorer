@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2023 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,3 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-    bundleName: "Hallo Welt",
-    bundleDescription: "Das Modul gibt Hallo aus.",
-    hello: "Hallo Welt"
-};

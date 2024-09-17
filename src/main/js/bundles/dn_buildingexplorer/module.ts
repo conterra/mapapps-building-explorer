@@ -14,4 +14,4 @@
 /// limitations under the License.
 ///
 
-import "dojo/i18n!./nls/bundle";
+export { BuildingExplorerController } from "./BuildingExplorerController";

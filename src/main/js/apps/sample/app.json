@@ -14,7 +14,7 @@
             "theme-autumn",
             "theme-everlasting",
             "map-init",
-            "map-preload-2D",
+            // "map-preload-2D",
             "toolset",
             "banner",
             "mapnavigation",
@@ -25,10 +25,19 @@
             "search-ui",
             "locator-store",
             "toc",
-            "sample_helloworld"
+            "dn_buildingexplorer",
+            "portal-webitem-map",
+            "dn_daylight"
         ]
     },
     "bundles": {
+        "portal-webitem-map" : {
+            "Config" : {
+                "portalItem": {
+                    "id": "f477c289e93347aba6a0c052bfe0e0a4"
+                }
+            }
+        },
         "banner": {
             "BannerWidget": {
                 "label": "Developer Network",
@@ -38,37 +47,58 @@
                 "link": "http://developernetwork.conterra.de"
             }
         },
-        "map-init": {
-            "Config": {
-                "basemaps": [
-                    {
-                        "id": "esri_street",
-                        "title": "Straßenkarte (grau)",
-                        "thumbnailUrl": "resource('${app}:/images/streets.png')",
-                        "selected": true,
-                        "basemap": "gray-vector"
-                    },
-                    {
-                        "id": "esri_hybrid",
-                        "title": "Luftbild (hybrid)",
-                        "thumbnailUrl": "resource('${app}:/images/hybrid.png')",
-                        "basemap": "hybrid"
-                    }
-                ],
-                "map": {
-                    "layers": []
-                },
-                "view": {
-                    "viewmode": "2D",
-                    "center": {
-                        "x": 774853,
-                        "y": 6610677,
-                        "spatialReference": 3857
-                    },
-                    "scale": 140000
-                }
-            }
-        },
+        // "map-init": {
+        //     "Config": {
+        //         "basemaps": [
+        //             {
+        //                 "id": "esri_street",
+        //                 "title": "Straßenkarte (grau)",
+        //                 "thumbnailUrl": "resource('${app}:/images/streets.png')",
+        //                 "selected": true,
+        //                 "basemap": "gray-vector"
+        //             },
+        //             {
+        //                 "id": "esri_hybrid",
+        //                 "title": "Luftbild (hybrid)",
+        //                 "thumbnailUrl": "resource('${app}:/images/hybrid.png')",
+        //                 "basemap": "hybrid"
+        //             }
+        //         ],
+        //         "map": {
+        //             "layers": [
+        //                 {
+
+        //                 },
+        //                 {
+        //                     "id": "test",
+        //                     "type": "AGS_BUILDING",
+        //                     "url": "https://tiles.arcgis.com/tiles/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Esri_Admin_Building/SceneServer"
+        //                 }
+        //             ],
+        //             "ground": [
+        //                 {
+        //                     "url": "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer",
+        //                     "type": "ELEVATION"
+        //                 }
+        //             ]
+        //         },
+        //         "view": {
+        //            "viewmode": "3D",
+        //             "camera": {
+        //                 "heading": 136.8701794643217,
+        //                 "tilt": 79.79644625047392,
+        //                 "position": {
+        //                     "x": 536508.4282291891,
+        //                     "y": 5742784.271064765,
+        //                     "z": 365.8990031592548,
+        //                     "spatialReference": {
+        //                         "wkid": 3857
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // },
         "themes": {
             "ThemeModel": {
                 "_selectedTheme": "autumn"
@@ -79,7 +109,7 @@
         },
         "toc": {
             "Config": {
-                "showBasemaps" : true,
+                "showBasemaps": true,
                 "showLayerLegend": true
             }
         },
@@ -89,12 +119,13 @@
                     {
                         "id": "mapview_tools",
                         "tools": [
+                            "daylightToggleTool",
+                            "buildingExplorerToggleTool",
                             "locateMeTool",
                             "zoomInTool",
                             "zoomOutTool",
                             "compassTool",
-                            "restoreInitialViewTool",
-                            "viewmodeSwitcherTool"
+                            "restoreInitialViewTool"
                         ],
                         "registerWidget": {
                             "widgetRole": "mapview_tools"
