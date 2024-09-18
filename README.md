@@ -1,6 +1,6 @@
 [![devnet-bundle-snapshot](https://github.com/conterra/mapapps-building-explorer/actions/workflows/devnet-bundle-snapshot.yml/badge.svg)](https://github.com/conterra/mapapps-building-explorer/actions/workflows/devnet-bundle-snapshot.yml)
 ![Static Badge](https://img.shields.io/badge/tested_for_map.apps-4.18.0-%20?labelColor=%233E464F&color=%232FC050)
-# Labeling
+# Building Explorer
 
 The Building Explorer Bundle offers insights into building structures based on Building Scene Layer data.
 
