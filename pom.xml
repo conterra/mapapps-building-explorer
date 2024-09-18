@@ -21,7 +21,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.devnet</groupId>
-    <artifactId>mapapps-buildingexplorer</artifactId>
+    <artifactId>mapapps-building-explorer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <repositories>
@@ -455,10 +455,10 @@
         </plugins>
     </build>
     <scm>
-        <connection>scm:git:https://github.com/conterra/mapapps-buildingexplorer.git</connection>
-        <developerConnection>scm:git:https://github.com/conterra/mapapps-buildingexplorer.git
+        <connection>scm:git:https://github.com/conterra/mapapps-building-explorer.git</connection>
+        <developerConnection>scm:git:https://github.com/conterra/mapapps-building-explorer.git
         </developerConnection>
-        <url>https://github.com/conterra/mapapps-buildingexplorer</url>
+        <url>https://github.com/conterra/mapapps-building-explorer</url>
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>
