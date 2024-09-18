@@ -14,4 +14,4 @@
 /// limitations under the License.
 ///
 
-export { BuildingExplorerController } from "./BuildingExplorerController";
+export { BuildingExplorerController as Config } from "./BuildingExplorerController";

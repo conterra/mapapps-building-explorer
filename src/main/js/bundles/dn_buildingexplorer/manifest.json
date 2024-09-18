@@ -12,21 +12,20 @@
     "main": "",
     "productName": "devnet-mapapps-buildingexplorer",
     "dependencies": {
+        "ct": "^4.18.0",
+        "apprt-core": "^4.18.0",
         "esri": "^4.18.0",
         "esri-widgets": "^4.18.0",
-        "map-widget": "^4.18.0",
-        "apprt-binding": "^4.18.0",
-        "apprt-core": "^4.18.0",
-        "ct": "^4.18.0"
+        "map-widget": "^4.18.0"
     },
-    // "cssThemesExtension": [
-    //     {
-    //         "name": "*",
-    //         "files": [
-    //             "./css/styles.css"
-    //         ]
-    //     }
-    // ],
+    "cssThemesExtension": [
+        {
+            "name": "*",
+            "files": [
+                "./css/styles.css"
+            ]
+        }
+    ],
     "layout-widgets": [
         {
             "widgetRole": "buildingExplorerWidget",
@@ -38,16 +37,12 @@
                 "minimizeOnClose": true,
                 "resizable": false,
                 "marginBox": {
-                    "w": 350,
-                    "h": 250,
+                    "w": 320,
+                    "h": 500,
                     "l": 20,
                     "t": 125
                 },
-                "minSize": {
-                    "w": 350,
-                    "h": 230
-                },
-                "windowClass": "daylight-window noPadding"
+                "windowClass": "noPadding"
             }
         },
         {
@@ -88,7 +83,7 @@
     ],
     "components": [
         {
-            "name": "BuildingExplorerController",
+            "name": "Config",
             "provides": [
                 "dn_buildingexplorer.BuildingExplorerController"
             ],
@@ -118,7 +113,7 @@
                 "id": "buildingExplorerToggleTool",
                 "title": "${tool.title}",
                 "tooltip": "${tool.tooltip}",
-                "iconClass": "icon-transparency",
+                "iconClass": "esri-icon-organization",
                 "activateHandler": "onToolActivated",
                 "deactivateHandler": "onToolDeactivated",
                 "toolRole": "toolset",

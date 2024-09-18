@@ -14,22 +14,23 @@
 /// limitations under the License.
 ///
 
-import type { MapWidgetModel } from "map-widget/api";
-import type { InjectedReference } from "apprt-core/InjectedReference";
-import ct_util from "ct/ui/desktop/util";
-import async from "apprt-core/async";
 import BuildingExplorer from "esri/widgets/BuildingExplorer";
 import EsriDijit from "esri-widgets/EsriDijit";
+import ct_util from "ct/ui/desktop/util";
+import async from "apprt-core/async";
+
+import type { InjectedReference } from "apprt-core/InjectedReference";
+import type { MapWidgetModel } from "map-widget/api";
+import type { BundleContext, ComponentContext, ServiceRegistration } from "apprt/api";
 
 export class BuildingExplorerController {
-    private tool: any;
-    private bundleContext: any;
     private buildingExplorerWidget: any;
-    private serviceRegistration: any;
+    private tool: InjectedReference<any>;
+    private bundleContext!: BundleContext;
+    private serviceRegistration?: ServiceRegistration | null;
+    private _mapWidgetModel?: InjectedReference<MapWidgetModel>;
 
-    private _mapWidgetModel: InjectedReference<MapWidgetModel> | null = null;
-
-    public activate(componentContext: any): void {
+    public activate(componentContext: ComponentContext): void {
         this.bundleContext = componentContext.getBundleContext();
     }
 
@@ -37,7 +38,7 @@ export class BuildingExplorerController {
         this.destroyWidget();
     }
 
-    public onToolActivated(evt): void {
+    public onToolActivated(evt: any): void {
         this.tool = evt.tool;
         this.getView().then((view) => {
             const widget = this.getWidget(view);
@@ -50,11 +51,11 @@ export class BuildingExplorerController {
         });
     }
 
-    public onToolDeactivated():void {
+    public onToolDeactivated(): void {
         this.hideWindow();
     }
 
-    private showWindow(widget) {
+    private showWindow(widget: any): void {
         const serviceProperties = {
             "widgetRole": "buildingExplorerWidget"
         };
@@ -85,8 +86,23 @@ export class BuildingExplorerController {
         }
     }
 
-    private getWidget(view): any {
-        return this.buildingExplorerWidget = new BuildingExplorer({layers: [view.map.layers.items[0]]});
+    private getWidget(view: __esri.SceneView): any {
+        const props = this._properties;
+        const layerIds = props.buildingLayerIds;
+
+        if (!layerIds) return;
+
+        const buildingLayers = this.getBuildingLayers(view, layerIds);
+        return this.buildingExplorerWidget = new BuildingExplorer({
+            view: view,
+            layers: buildingLayers,
+            ...props
+        });
+    }
+
+    private getBuildingLayers(view: __esri.SceneView): __esri.BuildingSceneLayer[] {
+        const mapLayers = view.map.layers;
+        return mapLayers.items.filter(layer => layer.type === "building-scene");
     }
 
     private destroyWidget(): void {
