@@ -88,11 +88,8 @@ export class BuildingExplorerController {
 
     private getWidget(view: __esri.SceneView): any {
         const props = this._properties;
-        const layerIds = props.buildingLayerIds;
 
-        if (!layerIds) return;
-
-        const buildingLayers = this.getBuildingLayers(view, layerIds);
+        const buildingLayers = this.getBuildingLayers(view);
         return this.buildingExplorerWidget = new BuildingExplorer({
             view: view,
             layers: buildingLayers,
