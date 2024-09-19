@@ -35,10 +35,10 @@
                 "closable": true,
                 "maximizable": false,
                 "minimizeOnClose": true,
-                "resizable": false,
+                "resizable": true,
                 "marginBox": {
                     "w": 320,
-                    "h": 500,
+                    "b": 70,
                     "l": 20,
                     "t": 125
                 },

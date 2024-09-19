@@ -17,3 +17,11 @@
  .ctAppRoot .buildingExplorerWidget .esri-widget__heading {
     margin-top: 0;
  }
+
+ .ctAppRoot .buildingExplorerWidget .esri-building-disciplines-tree-node__collapse-toggle {
+   font-size: 10px;
+}
+
+ .ctAppRoot .buildingExplorerWidget button.esri-icon-check-mark {
+   font-size: 10px;
+}
