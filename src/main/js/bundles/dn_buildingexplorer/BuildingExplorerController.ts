@@ -99,12 +99,15 @@ export class BuildingExplorerController {
 
     private getBuildingLayers(view: __esri.SceneView): __esri.BuildingSceneLayer[] {
         const mapLayers = view.map.layers;
-        return mapLayers.items.filter(layer => layer.type === "building-scene");
+        const flattenLayers = this.getFlattenLayers(mapLayers);
+        return flattenLayers.items.filter(layer => layer.type === "building-scene");
     }
 
     private destroyWidget(): void {
-        this.buildingExplorerWidget.destroy();
-        this.buildingExplorerWidget = undefined;
+        if (this.buildingExplorerWidget) {
+            this.buildingExplorerWidget.destroy();
+            this.buildingExplorerWidget = undefined;
+        }
     }
 
     private getView(): Promise<__esri.View> {
@@ -122,5 +125,9 @@ export class BuildingExplorerController {
                 }
             });
         }
+    }
+
+    private getFlattenLayers(layers: __esri.Collection<__esri.Layer>): __esri.Collection<__esri.Layer> {
+        return layers.flatten(item => item.layers || item.sublayers);
     }
 }
