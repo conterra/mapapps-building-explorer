@@ -34,6 +34,7 @@
             "templatelayout",
             "theme-autumn",
             "toc",
+            "toolrules",
             "toolset",
             "dn_buildingexplorer",
             "dn_imprintprivacy"
@@ -121,6 +122,13 @@
             "Config": {
                 "showBasemaps": true,
                 "showLayerLegend": true
+            }
+        },
+        "toolrules": {
+            "ToolActiveStateManager": {
+                "activateOnStartToolIds": [
+                    "buildingExplorerToggleTool"
+                ]
             }
         },
         "toolset": {
