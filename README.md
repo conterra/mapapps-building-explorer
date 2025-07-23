@@ -7,7 +7,7 @@ The Building Explorer Bundle offers insights into building structures based on B
 ![Screenshot App](https://github.com/conterra/mapapps-building-explorer/blob/main/screenshot.JPG)
 
 ## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_building-explorer/index.html
+https://demos.conterra.de/mapapps/resources/apps/public_demo_buildingexplorer/index.html
 
 ## Installation Guide
 Simply add the bundle "dn_buildingexplorer" to your app.
