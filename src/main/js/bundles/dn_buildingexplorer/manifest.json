@@ -12,11 +12,11 @@
     "main": "",
     "productName": "devnet-mapapps-buildingexplorer",
     "dependencies": {
-        "ct": "^4.18.0",
-        "apprt-core": "^4.18.0",
-        "esri": "^4.18.0",
-        "esri-widgets": "^4.18.0",
-        "map-widget": "^4.18.0"
+        "@arcgis/core": "^4.33.0",
+        "ct": "^4.20.0",
+        "apprt-core": "^4.20.0",
+        "esri-widgets": "^4.20.0",
+        "map-widget": "^4.20.0"
     },
     "cssThemesExtension": [
         {

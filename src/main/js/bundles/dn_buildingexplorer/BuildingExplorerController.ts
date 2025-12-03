@@ -14,8 +14,8 @@
 /// limitations under the License.
 ///
 
-import BuildingExplorer from "esri/widgets/BuildingExplorer";
-import EsriDijit from "esri-widgets/EsriDijit";
+import BuildingExplorer from "@arcgis/core/widgets/BuildingExplorer";
+import { createDijit } from "esri-widgets/EsriDijit";
 import ct_util from "ct/ui/desktop/util";
 import async from "apprt-core/async";
 
@@ -42,11 +42,6 @@ export class BuildingExplorerController {
         this.tool = evt.tool;
         this.getView().then((view) => {
             const widget = this.getWidget(view);
-            widget.own({
-                remove() {
-                    widget.destroy();
-                }
-            });
             this.showWindow(widget);
         });
     }
@@ -60,7 +55,14 @@ export class BuildingExplorerController {
             "widgetRole": "buildingExplorerWidget"
         };
         const interfaces = ["dijit.Widget"];
-        const content = new EsriDijit(widget);
+        const content = createDijit(widget);
+
+        content.own({
+            remove() {
+                widget.destroy();
+            }
+        });
+
         this.serviceRegistration = this.bundleContext.registerService(interfaces, content, serviceProperties);
 
         async(() => {
